@@ -1,24 +1,31 @@
-# README
+# USAGE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Run following command
 
-Things you may want to cover:
+```
+$ docker-compose run web rails new . --force --database=mysql --skip-bundle --skip-git
+```
 
-* Ruby version
+2. Modify Gemfile to add `gem 'therubyracer', platforms: :ruby`
 
-* System dependencies
+3. Run `$ docker-compose build`
 
-* Configuration
+4. Modify `config/database.yml` as following
 
-* Database creation
+```yml
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: xxxxxx # <- Modify here.
+  host: db # <- Modify here.
+```
 
-* Database initialization
+5. Run `$ docker-compose up`
 
-* How to run the test suite
+6. Run `$ docker-compose exec spring spring rake db:create`
 
-* Services (job queues, cache servers, search engines, etc.)
+7. Open http://localhost:3000/
 
-* Deployment instructions
-
-* ...
+See http://docs.docker.jp/compose/rails.html
