@@ -19,7 +19,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
-  host: db # <- Modify here.
+  host: <%= ENV.fetch("DB_HOST", "localhost") %> # <- Modify here.
 ```
 
 5. Run `$ docker-compose up -d`
