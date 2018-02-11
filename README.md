@@ -3,7 +3,7 @@
 1. Run following command
 
 ```
-$ docker-compose run web rails new . --force --database=mysql --skip-bundle --skip-git
+$ docker-compose run web rails new . --force --database=mysql --skip-bundle
 ```
 
 2. Modify Gemfile to uncomment `gem 'mini_racer', platforms: :ruby`
@@ -22,7 +22,7 @@ default: &default
   host: db # <- Modify here.
 ```
 
-5. Run `$ docker-compose up`
+5. Run `$ docker-compose up -d`
 
 6. Run `$ docker-compose exec spring spring rake db:create`
 
