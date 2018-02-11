@@ -3,7 +3,7 @@ services:
   db:
     image: mysql:5.7
     volumes:
-      - .mysql_data:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: xxxxxx
   web: &web_base
@@ -21,3 +21,5 @@ services:
     ports: []
     tty: false
     stdin_open: false
+volumes:
+  mysql_data:
