@@ -6,7 +6,7 @@
 $ docker-compose run web rails new . --force --database=mysql --skip-bundle --skip-git
 ```
 
-2. Modify Gemfile to add `gem 'therubyracer', platforms: :ruby`
+2. Modify Gemfile to uncomment `gem 'mini_racer', platforms: :ruby`
 
 3. Run `$ docker-compose build`
 
