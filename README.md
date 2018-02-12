@@ -3,7 +3,7 @@
 1. Run following command
 
 ```
-$ docker-compose run web rails new . --force --database=mysql --skip-bundle
+$ docker-compose run --rm web rails new . --force --database=mysql --skip-bundle
 ```
 
 2. Modify Gemfile to uncomment `gem 'mini_racer', platforms: :ruby`
