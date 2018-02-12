@@ -8,7 +8,8 @@ $ docker-compose run --rm web rails new . --force --database=mysql --skip-bundle
 
 2. Modify Gemfile to uncomment `gem 'mini_racer', platforms: :ruby`
 
-3. Run `$ docker-compose build`
+3. Run `$ docker-compose run --rm web bundle install` or `$ docker-compose build`
+  A former is not rebuild docker image but faster
 
 4. Modify `config/database.yml` as following
 
