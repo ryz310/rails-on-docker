@@ -29,9 +29,6 @@ services:
       - bundle:/usr/local/bundle
     tty: false
     stdin_open: false
-    depends_on:
-      - web
-      - db
     environment:
       DB_HOST: db
 volumes:
