@@ -24,7 +24,6 @@ services:
   spring:
     image: web_image
     command: bundle exec spring server
-    ports: []
     tty: false
     stdin_open: false
     depends_on:
