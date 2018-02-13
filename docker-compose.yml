@@ -8,11 +8,13 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     ports:
       - "3306:3306"
-  web: &web_base
+  web:
     build: .
+    image: web_image
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/myapp
+      - bundle:/usr/local/bundle
     ports:
       - "3000:3000"
     depends_on:
@@ -20,10 +22,15 @@ services:
     environment:
       DB_HOST: db
   spring:
-    <<: *web_base
+    image: web_image
     command: bundle exec spring server
-    ports: []
+    volumes:
+      - .:/myapp
+      - bundle:/usr/local/bundle
     tty: false
     stdin_open: false
+    environment:
+      DB_HOST: db
 volumes:
   mysql_data:
+  bundle:
