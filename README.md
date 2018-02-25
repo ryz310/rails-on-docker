@@ -1,5 +1,16 @@
 # USAGE
 
+## Preparing
+
+The base image exists on [Docker Hub](https://hub.docker.com/r/ryz310/rails-on-docker/), so you can omit this procedure.
+If you want to create base image on local, run following command.
+
+```
+$ docker build -t ryz310/rails-on-docker - < base/Dockerfile
+```
+
+## Building
+
 1. Run following command
 
 ```
