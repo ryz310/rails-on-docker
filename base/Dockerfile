@@ -5,7 +5,3 @@ RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 
 WORKDIR /myapp
 ENV BUNDLE_JOBS=32
-
-ONBUILD COPY Gemfile Gemfile.lock /myapp/
-ONBUILD RUN bundle install
-ONBUILD COPY . /myapp
