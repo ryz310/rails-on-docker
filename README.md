@@ -41,3 +41,11 @@ default: &default
 7. Open http://localhost:3000/
 
 See http://docs.docker.jp/compose/rails.html
+
+## Destruction
+
+If you want to remove built environments, run following command
+
+```
+$ docker-compose down --volumes --remove-orphans
+```
