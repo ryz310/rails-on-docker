@@ -14,7 +14,7 @@ $ docker build -t ryz310/rails-on-docker - < base/Dockerfile
 1. Run following command
 
 ```
-$ docker-compose run --rm web rails new . --force --database=mysql --skip-bundle
+$ docker-compose run --rm web rails new . --force --database=mysql --skip-bundle --skip-test
 ```
 
 2. Modify Gemfile to uncomment `gem 'mini_racer', platforms: :ruby`
