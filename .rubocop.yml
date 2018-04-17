@@ -1,0 +1,27 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - 'db/schema.rb'
+
+Rails:
+  Enabled: true
+
+Style/Documentation:
+  Exclude:
+    - 'db/migrate/**/*'
+    - 'spec/**/*'
+    - 'app/helpers/application_helper.rb'
+    - 'app/mailers/application_mailer.rb'
+    - 'app/models/application_record.rb'
+    - 'config/application.rb'
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - '/**/*.rake'
+
+Metrics/LineLength:
+  Max: 100
